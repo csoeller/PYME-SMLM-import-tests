@@ -8,6 +8,9 @@ files_to_test = {
     'vlume' : glob.glob('vLUME_Sample_Data_Sets/*.csv'),
 }
 
+# TODO: prep code to uncompress zipped data sets before running the remainder of the script
+
+# the below will only succeed with our new code that is currently in the csv-flavour-io branch
 def test_import():
     import PYME.IO.FileUtils.CSVflavoursSMLM
 
