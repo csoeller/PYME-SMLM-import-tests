@@ -26,12 +26,15 @@ def check_xy_names(pl):
     assert('x' in pl.keys())
     assert('y' in pl.keys())
 
+def check_flavour(pl,flavour):
+    assert(pl.mdh['SMLMImporter.flavour'] == flavour)
     
 def test_elyra():
     
     for fname in files_to_test['elyra']:
         pl = pipeline_from_file_load(fname)
         check_xy_names(pl)
+        check_flavour(pl,'elyra')
 
 
 def test_thunderstorm():
@@ -39,6 +42,7 @@ def test_thunderstorm():
     for fname in files_to_test['thunderstorm']:
         pl = pipeline_from_file_load(fname)
         check_xy_names(pl)
+        check_flavour(pl,'thunderstorm')
         
 
 def test_vlume():
